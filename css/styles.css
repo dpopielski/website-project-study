@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+*:focus {
+    outline: none;
+}
+
 body {
     background-color: #ffffff;
     font-family: 'Poppins', sans-serif;
@@ -69,7 +73,7 @@ ul, a {
 }
 
 .navElement-active > span {
-    color: #D0CDE2 !important;
+    color: #3F3D56 !important;
     font-weight: bold;
     justify-content: center;
     align-items: center;
@@ -77,7 +81,7 @@ ul, a {
 }
 
 .navElement > span {
-    color: #3F3D56;
+    color: #D0CDE2;
     font-weight: bold;
     justify-content: center;
     align-items: center;
@@ -85,7 +89,7 @@ ul, a {
 }
 
 .navElement > span:hover {
-    color: #D0CDE2;
+    color: #3F3D56;
     transition: 0.4s;
 }
 
@@ -167,6 +171,7 @@ footer > span {
     font-size: 18px;
     transition: 0.2s;
     border-radius: 50px;
+    margin-top: 8px;
   
     /* make the list items unselectable */
     -webkit-user-select: none;
@@ -175,25 +180,27 @@ footer > span {
     user-select: none;
 }
   
-/* Set all odd list items to a different color (zebra-stripes) */
+/* Set all odd list items to a different color (zebra-stripes) 
+
 .myList li:nth-child(odd) {
     background: #f9f9f9;
 }
-  
+*/
+
 /* Darker background-color on hover */
 .myList li:hover {
     background: #ddd;
 }
   
 /* When clicked on, add a background color and strike out text */
-.myList li.checked {
+ul li.checked {
     background: #888;
     color: #fff;
     text-decoration: line-through;
 }
   
 /* Add a "checked" mark when clicked on */
-.myList li.checked::before {
+ul li.checked::before {
     content: '';
     position: absolute;
     border-color: #fff;
@@ -217,6 +224,7 @@ footer > span {
 .close:hover {
     background-color: #f44336;
     color: white;
+    border-radius: 0px  50px  50px 0px;
 }
   
 /* Style the header */
@@ -268,17 +276,38 @@ input {
     background-color: #bbb;
 }
 
-
-
-
-@media all and (max-width: 992px) { 
+@media all and (max-width: 778px) { 
     
-
-
-    .navElement > img {
+    .navElement > span {
         display: none;
         padding: 0;
         margin: 0;
+    }
+
+    .navElement-active > span {
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navElement > img {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .navElement-active > img {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .navElement {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .navElement-active {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .ToDoHeader {

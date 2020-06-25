@@ -19,6 +19,14 @@ for (let i = 0; i < close.length; i++) {
   }
 }
 
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelectorAll('ul')[1];
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   let li = document.createElement("li");
@@ -47,16 +55,12 @@ function newElement() {
   }
 }
 
-// Get the input field
 const input = document.getElementById("myInput");
 
 // Execute a function when the user releases a key on the keyboard
 input.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
   if (event.keyCode === 13) {
-    // Cancel the default action, if needed
     event.preventDefault();
-    // Trigger the button element with a click
     document.getElementById("myBtn").click();
   }
 });
